@@ -420,7 +420,5 @@ re_search(RE, Str, Res) :-
           Res = re_compile_error).
 
 
-NFA = [s13=epsilon([beg(nom)], [s16]), s14=epsilon([end(nom)], [s12]), s16=step([(a->s15)]), s15=step([(c->s14)]), s12=success].
 
-NFA = [s8=epsilon([beg(nom), [s11]]), s9=epsilon([end(nom), [s7]]), s11=step([(a->s10)]), s10=step([(c->s9)]), s7=success].
 
