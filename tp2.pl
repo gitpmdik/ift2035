@@ -346,10 +346,10 @@ re_comp(+(RE), End, Begin, NFA):-
 
 re_comp(name(Name,RE), End, Begin, NFA):-
     new_state(Begin),
-    new_state(Begin2),
-    re_comp(RE,Begin2,Begin1,NFA1),
+    new_state(End1),
+    re_comp(RE,End1,Begin1,NFA1),
     NFA=[Begin=epsilon([beg(Name), [Begin1]]),
-         Begin2= epsilon([end(Name), [End]])| NFA1].
+        End1= epsilon([end(Name), [End]])| NFA1].
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Élimination des cycles d'epsilon infinis
